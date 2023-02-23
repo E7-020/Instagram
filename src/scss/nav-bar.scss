@@ -1,5 +1,6 @@
 .nav-bar{
-    max-width: 1440px;
+    background-color: white;
+    max-width: 100%;
     height: 60px;
     display: flex;
     justify-content: space-evenly;
@@ -18,12 +19,26 @@
             height: 36px;
             background: #EFEFEF;
             border-radius: 8px;
+            border: none;
+            padding-left: 30px;
         }
     }
     .nav-bar-icon{
         img{
-            padding-left: 28px;
+            margin-left: 28px;
+            
         }
+        .nav-bar-icon-profile{
+            margin-left: 22px;
+            width: 30px;
+            height: 30px;
+            border-radius: 999px;  
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }   
+        
+       
     }
 }
 

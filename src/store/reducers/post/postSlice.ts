@@ -1,6 +1,6 @@
 import { postState, IPost } from "../../../types/IPost";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { post } from "../post/postAction";
+import { uploadPosts } from "../post/postAction";
 
 const initialState: postState = {
   post: [],
@@ -12,11 +12,11 @@ export const postSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers(builder) {
-    builder.addCase(post.pending, (state) => {
+    builder.addCase(uploadPosts.pending, (state) => {
       state.isLoading = true;
     });
     builder.addCase(
-      post.fulfilled,
+      uploadPosts.fulfilled,
       (state, action: PayloadAction<IPost[]>) => {
         state.isLoading = false;
         state.post = action.payload;
