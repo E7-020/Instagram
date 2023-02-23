@@ -3,7 +3,8 @@ import { useState } from "react";
 import '../scss/authorization.scss';
 import '../scss/colors.scss';
 import { useAppDispatch } from '../hooks/hooks';
-import { authorization } from '../store/reducers/insta/SignInAction';
+import { authorization } from '../store/reducers/user/userAction';
+import { Link } from 'react-router-dom';
 
 
 export const Authorization = () => {
@@ -24,9 +25,9 @@ export const Authorization = () => {
                 <input value={userName} onChange={(e) => setUserName(e.target.value)}  type="text" placeholder="Телефон, имя пользователя или эл.адрес" />
             </div>
             <div>
-                <input value={password} onChange={(e) => setPassword(e.target.value)} type="text"  placeholder="Пароль"/>
+                <input value={password} onChange={(e) => setPassword(e.target.value)} type="password"  placeholder="Пароль"/>
             </div>
-            <button onClick={login}>Войти</button>
+            <Link className='active' style={{ textDecoration: "none" }} to='/Home' onClick={login}>Войти</Link>
         </div>
     )
 }

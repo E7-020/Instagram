@@ -9,10 +9,6 @@ export interface IPost {
 }
 
 export type postState = {
-    posts:IPost[];
+    post:IPost[];
     isLoading: boolean;
-}
-export type userdate ={
-    username:string;
-    password:string;
 }

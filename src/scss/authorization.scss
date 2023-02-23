@@ -18,7 +18,7 @@
 
         color: #6A6A6A;
     }
-    button{
+    .active{
         width: 720px;
         height: 100px;
         background: #79A7FF;
@@ -26,6 +26,7 @@
         border-radius: 24px;
         margin-top: 32px;
 
+        padding-top: 25px;
         font-weight: 700;
         font-size: 42px;
         line-height: 49px;
