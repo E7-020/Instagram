@@ -9,7 +9,7 @@ interface isAuth {
 
 export const Auth: FC <isAuth> = ({children}) => {
 
-   const isAuth = useAppSelector((state) => state.user.isAuth)
+   const isAuth = useAppSelector((state) => state.user.isAuth);
 
    if(!isAuth){
       return(

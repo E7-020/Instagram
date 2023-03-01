@@ -1,6 +1,6 @@
-.home-post{
+.posts{
+
     margin-top: 24px;
-    margin-bottom: 24px;
     margin-left: 200px;
     .post-profile{
         background-color: white;
@@ -28,7 +28,7 @@
         }
     }
     .post-picture{
-        width: 600px;
+        max-width: 600px;
         height: 600px;
         background: #C4C4C4;
         img{
@@ -39,7 +39,7 @@
     }
     .post-footer{
         padding-top: 17px;
-        width: 600px;
+        max-width: 600px;
         height: 249px;
         background-color: white;
         .post-footer-first-img{
@@ -62,23 +62,34 @@
                 font-weight: 500;
                 font-size: 14px;
                 line-height: 16px;
-                
+                font-family: 'Roboto', sans-serif;
                 color: #000000;
             }
             .post-footer-block-text{
                 padding-top: 8px;
+                p{
+                
                 font-weight: 500;
                 font-size: 14px;
                 line-height: 16px;
-
+                font-family: 'Roboto', sans-serif;
                 color: #000000;
+                }
+                span{
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 18px;
+                    display: flex;
+                    align-items: center;
+                    color: #8E8E8E;
+                }
             }
             .post-footer-block-comment{
                 padding-top: 9px;
                 font-weight: 400;
                 font-size: 14px;
                 line-height: 16px;
-
+                font-family: 'Roboto', sans-serif;
                 color: #8E8E8E;
             }
             .post-footer-block-time{
@@ -86,13 +97,13 @@
                 font-weight: 400;
                 font-size: 12px;
                 line-height: 14px;
-
+                font-family: 'Roboto', sans-serif;
                 color: #8E8E8E;
             }
         }
         .line{
             margin-top: 25px;
-            width: 600px;
+            max-width: 600px;
             height: 0px;
             border: 1px solid #EFEFEF;
         }
@@ -120,7 +131,7 @@
                 font-weight: 500;
                 font-size: 14px;
                 line-height: 16px;  
-                
+                font-family: 'Roboto', sans-serif;
                 color: rgba(0, 149, 246, 0.25);
             }
         }

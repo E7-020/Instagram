@@ -7,23 +7,31 @@ import LikesSvg from '../assets/likes.svg';
 import Search from '../assets/search.svg';
 import '../scss/nav-bar.scss';
 import { useAppSelector } from '../hooks/hooks';
-import Car from '../assets/car.jpg';
+import { FC } from 'react';
 
-export const NavBar = () => {
+interface modal {
+    modalActive:any
+    setModalActive:any
+ }
+
+
+export const NavBar: FC<modal> = ({modalActive,setModalActive}) => {
     const avatar = useAppSelector((state) => state.user.user.avatar);
+
     return(
         <div className='nav-bar'>
             <div className='nav-bar-logo'>
                 <img src={InstagramSvg} alt="" />
             </div>
             <div className='nav-bar-search'>
+                <img src={Search} alt="" />
                 <input  placeholder= 'Search'type="text"/>
             </div>
             
             <div className='nav-bar-icon'>
                 <img src={HomeSvg} alt="" />
                 <img src={MessagesSvg} alt="" />
-                <img src={AddSvg} alt="" />
+                <img onClick={() => setModalActive(true)} className='nav-bar-icon-modal' src={AddSvg} alt="" />
                 <img src={TrendsSvg} alt="" />
                 <img src={LikesSvg} alt="" />
                 <img className='nav-bar-icon-profile' src={avatar} alt="" />

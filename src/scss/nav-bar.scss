@@ -14,13 +14,19 @@
         }
     }
     .nav-bar-search{
+        position: relative;
+        img{
+           position: absolute;
+           top: 10px;
+           left: 10px;
+        }
         input{
             width: 252px;
             height: 36px;
             background: #EFEFEF;
             border-radius: 8px;
             border: none;
-            padding-left: 30px;
+            padding-left: 35px;
         }
     }
     .nav-bar-icon{
@@ -37,6 +43,9 @@
             background-repeat: no-repeat;
 
         }   
+        .nav-bar-icon-modal{
+            cursor: pointer;
+        }
         
        
     }

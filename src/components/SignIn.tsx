@@ -1,7 +1,6 @@
 import InstagramSvg from '../assets/instagram.svg';
 import { useState } from "react";
-import '../scss/authorization.scss';
-import '../scss/colors.scss';
+import '../scss/sig-in.scss';
 import { useAppDispatch, useAppSelector} from '../hooks/hooks';
 import { authorization } from '../store/reducers/user/userAction';
 import { Navigate, useNavigate } from "react-router-dom";

@@ -9,7 +9,7 @@ export const authorization = createAsyncThunk(
   async function (userdate: {userName: string, password: string}){
     const res = await baseService.post<IUser>("/user/sign-in", {
       username: userdate.userName,
-      password: userdate.password ,
+      password: userdate.password,
     })
     cookies.set('token', res.data.token)
     return res.data
@@ -21,6 +21,6 @@ export const getUser = createAsyncThunk(
       const res = await baseService.get<IUser>('/user')
       return res.data
     }
-  )
+)
 
 
