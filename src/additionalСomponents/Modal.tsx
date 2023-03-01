@@ -4,7 +4,7 @@ import { FC } from 'react';
 interface modal {
     active:any
     setActive:any
- }
+}
 export const Modal: FC <modal> = ({active, setActive}) => {
     return(
         <div className={active ? 'modal active' : 'modal'} onClick={() => setActive(false)}>

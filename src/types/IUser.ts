@@ -12,8 +12,5 @@ export type userState = {
     
 }
 
-export type userdate ={
-    username:string;
-    password:string;
-}
+
 

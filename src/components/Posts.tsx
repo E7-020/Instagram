@@ -11,7 +11,6 @@ import { useState } from "react";
 
 export const Posts = () => {
   const post = useAppSelector((state) => state.post.post);
-  const [readMore, setReadMore] = useState();
   
   const time = (time: number) => {
     dayjs.extend(relativeTime);
@@ -40,7 +39,7 @@ export const Posts = () => {
               <img className="post-footer-fourth-img" src={save} alt="" />
             </div>
             <div className="post-footer-block">
-              <p className="post-footer-block-like">{item.likes} likes</p>
+              <p className="post-footer-block-like">{item.likes}0 likes</p>
                 <div className="post-footer-block-text">
                  {item.description.length < 5? <p>{item.description}</p>: <span ><p>{item.description.slice(0,5)}</p>...more</span>} 
                 </div>
