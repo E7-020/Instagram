@@ -11,7 +11,10 @@ import { useState } from "react";
 
 export const Posts = () => {
   const post = useAppSelector((state) => state.post.post);
+  const[more,setMore] = useState(5);
+
   
+
   const time = (time: number) => {
     dayjs.extend(relativeTime);
     return dayjs(time).fromNow();
@@ -41,7 +44,7 @@ export const Posts = () => {
             <div className="post-footer-block">
               <p className="post-footer-block-like">{item.likes}0 likes</p>
                 <div className="post-footer-block-text">
-                 {item.description.length < 5? <p>{item.description}</p>: <span ><p>{item.description.slice(0,5)}</p>...more</span>} 
+                 {item.description.length < more? <p>{item.description}</p> : <span><p>{item.description.slice(0,more)}</p><span onClick={() => setMore(2000)}>...more</span></span>} 
                 </div>
               <p className="post-footer-block-comment">{item.comments} 0 commets</p>
               <p className="post-footer-block-time">{time(+item.created_at)}</p>

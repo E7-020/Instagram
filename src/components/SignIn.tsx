@@ -16,11 +16,29 @@ export const Authorization = () => {
     const navigate = useNavigate()
 
 
-    const login = () => {
-        dispatch(authorization({userName, password}))
-        setUserName("")
-        setPassword("")
-    }
+    // const login = () => {
+    //     dispatch(authorization({userName, password}))
+    //     setUserName("")
+    //     setPassword("")
+
+    // }
+
+    const login = async () => {
+        try {
+            await dispatch(authorization({ userName, password })).unwrap();
+            setUserName("");
+            setPassword("");
+            navigate('/home')
+        } catch (e) {
+            return e;
+        }
+    };
+
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === "Enter") {
+            login();
+        }
+    };
 
     return(
         <div className='authorization'>
@@ -29,10 +47,10 @@ export const Authorization = () => {
                 <input value={userName} onChange={(e) => setUserName(e.target.value)} type="text" placeholder="Телефон, имя пользователя или эл.адрес" />
             </div>
             <div>
-                <input value={password} onChange={(e) => setPassword(e.target.value)} type="password"  placeholder="Пароль"/>
+                <input value={password}  onKeyDown={(e) => handleKeyDown(e)} onChange={(e) => setPassword(e.target.value)} type="password"  placeholder="Пароль"/>
             </div>
             <button className='active' onClick={login}>Войти</button>
-            {isAuth && <Navigate to='/home'/>}
+            {/* {isAuth && <Navigate to='/home'/>} */}
         </div>
     )
 }
