@@ -1,5 +1,5 @@
 .posts{
-
+    position: relative;
     margin-top: 24px;
     margin-left: 200px;
     .post-profile{
@@ -8,7 +8,7 @@
         height: 60px;
         display: flex;
         align-items: center;
-        img{
+        .post-profile-logo{
             margin-left: 20px;
             width: 30px;
             height: 30px;
@@ -23,8 +23,8 @@
             
             color: #262626;
         }
-        div{
-            padding-left: 400px;
+        .post-profile-options{
+            margin-left: 400px;
         }
     }
     .post-picture{
@@ -34,6 +34,7 @@
         img{
             width: 600px;
             height: 600px;
+            object-fit: cover;
         }
         
     }
@@ -136,5 +137,41 @@
             }
         }
        
+    }
+    .block-edit-delete{
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 50px;
+    }
+    .edit{
+        width: 116px;
+        height: 26px;
+        background: #2B3138;
+        border-radius: 20px;
+        text-align: center;
+        padding-top: 5px;
+
+
+        font-weight: 700;
+        font-size: 11px;
+        line-height: 13px;
+        font-family: 'Roboto', sans-serif;
+        color: #F4FAFF;
+    }
+    .delete{
+        margin-top: 5px;
+        width: 116px;
+        height: 26px;
+        background: #2B3138;
+        border-radius: 20px;
+        text-align: center;
+        padding-top: 5px;
+
+        font-weight: 700;
+        font-size: 11px;
+        line-height: 13px;
+        font-family: 'Roboto', sans-serif;
+        color: #F4FAFF;
     }
 }

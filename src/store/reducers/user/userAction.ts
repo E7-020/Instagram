@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { Cookie } from "cookie.js";
-import { baseService, cookies } from "../../../API/api";
+import  Cookie  from "cookie.js";
+import { baseService } from "../../../API/api";
 import { IUser } from "../../../types/IUser";
 
 
@@ -11,7 +11,7 @@ export const authorization = createAsyncThunk(
       username: userdate.userName,
       password: userdate.password,
     })
-    cookies.set('token', res.data.token)
+    Cookie.set('token', res.data.token)
     return res.data
 })
 

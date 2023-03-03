@@ -1,20 +1,20 @@
 import axios from "axios";
-import { Cookie } from "cookie.js";
+import  Cookie from "cookie.js";
 import { store } from "../store/store";
 
 export const baseService = axios.create({
     baseURL: "https://unicode-unigram-xmfu.onrender.com"
 })
 
-export const cookies = new Cookie()
+
 
 export const setToken = () => {
-    baseService.defaults.headers.common.Authorization = "Bearer " + cookies.get("token")
+    baseService.defaults.headers.common.Authorization = "Bearer " + Cookie.get("token")
 }
 
 
 export const logout = () : void => {
-    cookies.remove('token');
+    Cookie.remove('token');
     store.dispatch(logout)
 }
 

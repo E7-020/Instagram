@@ -3,23 +3,25 @@ import { NavBar } from '../additionalСomponents/NavBar';
 import '../scss/home.scss';
 import { uploadPosts } from "../store/reducers/post/postAction";
 import { useEffect } from 'react';
-import { useAppDispatch } from '../hooks/hooks';
-import { Modal } from "../additionalСomponents/Modal";
-import { useState } from "react";
+import { useAppDispatch, useAppSelector } from '../hooks/hooks';
+import { SuggestionsBlock } from '../additionalСomponents/SuggestionsBlock';
+import { Modall } from '../additionalСomponents/Modall';
 export const Home = () => {
-
+    const { step } = useAppSelector(state => state.post)
     const dispatch = useAppDispatch()
-    const [modalActive, setModalActive] = useState(false)
 
     useEffect(() => {
         dispatch(uploadPosts())
     },[])
 
     return(
-        <div className='Home'>
-            <NavBar modalActive={modalActive} setModalActive={setModalActive}/>
-            <Posts/>
-            <Modal active={modalActive} setActive={setModalActive} />
-        </div>
+            <div className='home'>
+              <NavBar />  
+                <div className='post-block'>
+                    <Posts/>
+                    <SuggestionsBlock/>
+                </div>
+               {step && <Modall/>}
+            </div>
     )
 }

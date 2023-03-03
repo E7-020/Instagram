@@ -15,14 +15,7 @@ export const Authorization = () => {
     const [password, setPassword] = useState<string>("");
     const navigate = useNavigate()
 
-
-    // const login = () => {
-    //     dispatch(authorization({userName, password}))
-    //     setUserName("")
-    //     setPassword("")
-
-    // }
-
+    
     const login = async () => {
         try {
             await dispatch(authorization({ userName, password })).unwrap();

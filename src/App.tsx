@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Auth } from './additionalСomponents/Auth';
+
 import { setToken } from './API/api';
 import './app.css';
 import { Home } from './components/Home';
